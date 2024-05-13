@@ -24,7 +24,8 @@ namespace FPSGame
                 float horizontal = Input.GetAxis("Horizontal");
                 float vertical = Input.GetAxis("Vertical");
                 
-                
+                refAnimator.SetFloat("H", horizontal > 0f ? 1f : horizontal < 0f ? -1f : 0f);
+                refAnimator.SetFloat("V", vertical > 0f ? 1f : vertical < 0f ? -1f : 0f);
                 
                 if (horizontal ==0 && vertical ==0)
                 {
