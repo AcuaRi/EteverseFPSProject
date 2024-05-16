@@ -8,7 +8,8 @@ namespace FPSGame
     {
         protected Transform refTransform;
 
-        [SerializeField] private CharacterController characterController;
+        [SerializeField] protected CharacterController characterController;
+        [SerializeField] protected float rotationSpeed = 360f;
         
         //상태 진입
         protected virtual void OnEnable()
@@ -29,7 +30,14 @@ namespace FPSGame
         //상태 업데이트
         protected virtual void Update()
         {
+            Vector3 gravity = new Vector3(0, -9.8f, 0);
+            characterController.Move(gravity * Time.deltaTime);
             
+            // 좌우 캐릭터 회전 처리.
+            Vector3 rotation = new Vector3(0f, PlayerInputManager.Turn * rotationSpeed * Time.deltaTime, 0f);
+
+            // 회전 적용.
+            refTransform.Rotate(rotation);
         }
 
         //상태 종료
