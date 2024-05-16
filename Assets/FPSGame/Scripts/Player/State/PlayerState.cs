@@ -7,6 +7,8 @@ namespace FPSGame
     public class PlayerState : MonoBehaviour
     {
         protected Transform refTransform;
+
+        [SerializeField] private CharacterController characterController;
         
         //상태 진입
         protected virtual void OnEnable()
@@ -14,6 +16,12 @@ namespace FPSGame
             if (refTransform == null)
             {
                 refTransform = transform;
+            }
+            
+            // 컴포넌트 초기화.
+            if (characterController == null)
+            {
+                characterController = GetComponent<CharacterController>();
             }
         }
 
