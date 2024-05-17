@@ -22,7 +22,7 @@ namespace FPSGame
             Turn = Input.GetAxis("Mouse X");
             Look = Input.GetAxis("Mouse Y");
 
-            IsFire = Input.GetMouseButtonDown(0);
+            IsFire = Input.GetMouseButton(0);
         }
     }
 }

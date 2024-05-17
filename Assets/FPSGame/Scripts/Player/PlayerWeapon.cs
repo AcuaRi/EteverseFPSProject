@@ -5,7 +5,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private Vector3 positionOffset;
     [SerializeField] private Vector3 rotationOffset;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
     }
 
